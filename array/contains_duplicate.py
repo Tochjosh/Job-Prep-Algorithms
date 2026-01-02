@@ -1,4 +1,3 @@
-from collections import defaultdict
 
 def contains_duplicate(nums: list[int]) -> bool:
     """
