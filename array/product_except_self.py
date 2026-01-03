@@ -34,19 +34,17 @@ def product_except_self(nums: list[int]) -> list[int]:
     post_fix = 1
 
 
-    for i in range(length - 1):
-        if i == 0:
-            result[i] = post_fix
-            continue
-        post_fix = nums[i - 1] * post_fix
-        result[i] *= post_fix
+    for i in range(length):
+        result[i] = post_fix
+        post_fix *= nums[i]
 
     for i in range(length - 1, -1, -1):
-        if i == length - 1:
-            result [i] = pre_fix
-            continue
-        pre_fix = nums[i + 1] * pre_fix
         result[i] *= pre_fix
+        pre_fix *= nums[i]
 
     return result
+
+print(product_except_self([1, 2, 3, 4]))
+print(product_except_self([-1, 1, 0, -3, 3]))
+
 
