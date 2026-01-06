@@ -33,13 +33,16 @@ def max_sub_array(nums: list[int]) -> int:
         If you have figured out the O(n) solution, try coding another
         solution using the divide and conquer approach.
     """
+    # set the first value in the list to be the default maximum so far.
     max_so_far = nums[0]
     cur_sum = 0
 
     for num in nums:
+        # if negative cur_sum, reset the current sum to zero
         if cur_sum < 0:
             cur_sum = 0
         cur_sum += num
+        # if the addition of the current sum and the current value exceeds the max so far, set this as the max so far.
         if cur_sum > max_so_far:
             max_so_far = cur_sum
 
