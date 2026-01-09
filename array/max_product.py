@@ -1,4 +1,4 @@
-from http.cookiejar import cut_port_re
+# This is a dynamic programming problem
 
 
 def max_product(nums: list[int]) -> int:
